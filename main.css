@@ -1,0 +1,320 @@
+/* Core Styles */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #101016;
+    color: #fff;
+    font-size: 1.1em;
+    line-height: 1.5;
+    text-align: center;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 1em 0;
+}
+
+p {
+    margin: 0;
+    padding: 1em 0;
+}
+
+.btn {
+    display: inline-block;
+    background: #2690d4;
+    color: #fff;
+    text-decoration: none;
+    /* border-radius: 1.2em; */
+    border: 1px solid #3aaef7;
+    margin: .5em 0;
+    padding: .7em 1.4em;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #848af1;
+}
+
+/* Header Showcase */
+
+#showcase {
+    min-height: 450px;
+    text-align: center;
+}
+
+#showcase .bg-image {
+    position: absolute;
+    background: #110844 url("assets/imgs/drums.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 450px;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+#showcase h1 {
+    padding-top: 100px;
+    padding-bottom: 0;
+}
+
+#showcase .content-wrap,
+#section-a .content-wrap {
+    padding: 0 1.5em;
+}
+
+/* Section A */
+
+#section-a {
+    background: #eaeaea;
+    color: #333;
+    padding-bottom: 2em;
+}
+
+/* Section B */
+
+#section-b {
+    padding: 2em 1em 1em;
+    background: linear-gradient(#2690d4, #6b73ff);
+}
+
+#section-b ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#section-b li {
+    margin-bottom: 1em;
+    background: #fff;
+    color: #333;
+}
+
+.card-content {
+    padding: 1.5em;
+}
+
+/* Footer */
+
+#main-footer {
+    padding: 2em;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+#main-footer a {
+    color: #2690d4;
+    text-decoration: none;
+}
+
+/*section-c */
+
+#section-c {
+    background: #fff;
+}
+
+#section-c select {
+    text-decoration: none;
+    padding: .5em;
+    background: #2690d4;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 1em;
+}
+
+#drumMachine {
+    display: inline-block;
+    width: 100%;
+    height: 300px;
+    color: #111111;
+    margin-top: 1em;
+}
+
+.drumButton {
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    background: linear-gradient(#2690d4, #6b73ff);
+    border-radius: 10px;
+}
+
+/* section-d */
+
+#section-d {
+    overflow: hidden;
+}
+
+.player {
+    height: fit-content;
+    width: 100vw;
+    border: 1px solid #3aaef7;
+    margin-top: 50px;
+    margin-bottom: 0;
+    min-width: 100vw;
+    white-space: nowrap;
+    float: left;
+    overflow: visible;
+    overflow-x: scroll;
+    background: #3c42b3;
+}
+
+#playerControls {
+    height: 65px;
+    text-align: left;
+    margin: 0;
+}
+
+#playerControls .btn {
+    margin: 0;
+    height: 65px;
+    width: 80px;
+    float: left;
+    background: #6b73ff;
+    text-align: center;
+}
+
+#playerControls .btn:hover {
+    background: #2690d4;
+}
+
+#playerControls img {
+    height: 100%;
+    width: auto;
+    margin: auto;
+}
+
+/* width */
+.player::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+.player::-webkit-scrollbar-track {
+    background: #3c42b3;
+}
+
+/* Handle */
+.player::-webkit-scrollbar-thumb {
+    background: #3aaef7;
+}
+
+/* Handle on hover */
+.player::-webkit-scrollbar-thumb:hover {
+    background: #1679b6;
+}
+
+.player select {
+    position: relative;
+    float: left;
+    height: 40px;
+    font-size: .8em;
+    background: #848af1;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: .8em;
+    line-height: 100%;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #1679b6;
+}
+
+.instruments {
+    display: block;
+    height: 40px;
+    width: fit-content;
+    margin: 0;
+    /* margin-right: 80px; */
+}
+
+#beatCount {
+    float: center;
+    width: 68px !important;
+    font-size: 1.4em;
+    background: #848af1;
+    color: #fff;
+    /* border-radius: 5px; */
+    font-weight: normal;
+    font-size: .8em;
+    line-height: 100%;
+    text-align: center;
+    padding: 1em;
+}
+
+.clickBeat {
+    display: inline-block;
+    width: 40px;
+    height: 38px;
+    background: #848af1;
+    /* border-radius: 5px; */
+    line-height: 100%;
+    margin: 0;
+    border: 1px solid #6b73ff;
+}
+
+.clickBeat.on {
+    background: #3aaef7 !important;
+}
+
+.clickBeat.onPlaying {
+    background: #97d4fa !important;
+}
+
+.clickBeat.offPlaying {
+    background: #9499f8 !important;
+}
+
+.clickBeat.emphasize {
+    background: #787ff7;
+}
+
+/* media queries
+
+@media (min-width: 700px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+    }
+
+    #section-a .content-text {
+        columns: 2;
+        column-gap: 2em;
+    }
+
+    #section-a .content-text p {
+        padding-top: 0;
+    }
+
+    .content-wrap,
+    #section-b ul {
+        grid-column: 2/4;
+    }
+
+    .box,
+    #main-footer div {
+        grid-column: span 2;
+    }
+
+    #section-b ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #section-b li {
+        width: 31%;
+    }
+} */
