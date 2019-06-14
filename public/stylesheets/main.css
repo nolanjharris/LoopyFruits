@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #101016;
+    background: #eeeef0;
     color: #fff;
     font-size: 1.1em;
     line-height: 1.5;
@@ -159,21 +159,24 @@ p {
 .player {
     height: fit-content;
     width: 100vw;
-    border: 1px solid #3aaef7;
-    margin-top: 50px;
+    /* border: 1px solid #818283; */
+    margin-top: 75px;
     margin-bottom: 0;
     min-width: 100vw;
     white-space: nowrap;
     float: left;
     overflow: visible;
     overflow-x: scroll;
-    background: #3c42b3;
+    background: #eeeef1;
 }
 
 #playerControls {
     height: 65px;
-    text-align: left;
-    margin: 0;
+    /* text-align: left; */
+    margin: auto;
+    position: fixed;
+    z-index: 10;
+
 }
 
 #playerControls .btn {
@@ -181,7 +184,7 @@ p {
     height: 65px;
     width: 80px;
     float: left;
-    background: #6b73ff;
+    background: #59bcf5;
     text-align: center;
 }
 
@@ -203,12 +206,12 @@ p {
 
 /* Track */
 .player::-webkit-scrollbar-track {
-    background: #3c42b3;
+    background: #3aaef7;
 }
 
 /* Handle */
 .player::-webkit-scrollbar-thumb {
-    background: #3aaef7;
+    background: #01558a;
 }
 
 /* Handle on hover */
@@ -216,21 +219,33 @@ p {
     background: #1679b6;
 }
 
-.player select {
+.player .soundType {
     position: relative;
     float: left;
-    height: 40px;
-    font-size: .8em;
-    background: #848af1;
-    color: #fff;
+    width: 100px;
+    height: 38px;
+    font-size: 2em;
+    background: #6bc7fc;
+    color: #1679b6;
     border-radius: 5px;
-    font-weight: normal;
+    font-weight: bold;
     font-size: .8em;
-    line-height: 100%;
+    line-height: 38px;
     margin: 0;
     border-radius: 0;
     border: none;
-    border-bottom: 1px solid #1679b6;
+    border: 1px solid #7fa7be;
+}
+
+.player>div {
+    margin-bottom: 30px;
+}
+
+.player>div>h3 {
+    padding: 5px 15px;
+    margin: 0;
+    text-align: left;
+    color: #01558a;
 }
 
 .instruments {
@@ -245,7 +260,7 @@ p {
     float: center;
     width: 68px !important;
     font-size: 1.4em;
-    background: #848af1;
+    background: #d0d2d3;
     color: #fff;
     /* border-radius: 5px; */
     font-weight: normal;
@@ -259,11 +274,11 @@ p {
     display: inline-block;
     width: 40px;
     height: 38px;
-    background: #848af1;
+    background: #a2d8f7;
     /* border-radius: 5px; */
     line-height: 100%;
     margin: 0;
-    border: 1px solid #6b73ff;
+    border: 1px solid #7fa7be;
 }
 
 .clickBeat.on {
@@ -271,15 +286,15 @@ p {
 }
 
 .clickBeat.onPlaying {
-    background: #97d4fa !important;
+    background: #01558a !important;
 }
 
 .clickBeat.offPlaying {
-    background: #9499f8 !important;
+    background: #c1defc !important;
 }
 
 .clickBeat.emphasize {
-    background: #787ff7;
+    background: #8bcff7;
 }
 
 /* media queries

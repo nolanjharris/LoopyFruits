@@ -1,22 +1,22 @@
 var loopySounds = {
     kick: {
         sound: new Howl({
-            src: ['assets/audio/test/kick.wav']
+            src: ['/audio/test/kick.wav']
         })
     },
     clap: {
         sound: new Howl({
-            src: ['assets/audio/test/clap.wav']
+            src: ['/audio/test/clap.wav']
         })
     },
     cymbol: {
         sound: new Howl({
-            src: ['assets/audio/test/cymbol.wav']
+            src: ['/audio/test/cymbol.wav']
         })
     },
     hihat: {
         sound: new Howl({
-            src: ['assets/audio/test/hihat.wav']
+            src: ['/audio/test/hihat.wav']
         })
     }
 };

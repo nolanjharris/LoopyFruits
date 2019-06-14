@@ -1,22 +1,22 @@
 var keyData = {
     d: {
         sound: new Howl({
-            src: ['assets/audio/test/kick.wav']
+            src: ['/audio/test/kick.wav']
         })
     },
     f: {
         sound: new Howl({
-            src: ['assets/audio/test/clap.wav']
+            src: ['/audio/test/clap.wav']
         })
     },
     j: {
         sound: new Howl({
-            src: ['assets/audio/test/cymbol.wav']
+            src: ['/audio/test/cymbol.wav']
         })
     },
     k: {
         sound: new Howl({
-            src: ['assets/audio/test/hihat.wav']
+            src: ['/audio/test/hihat.wav']
         })
     }
 };

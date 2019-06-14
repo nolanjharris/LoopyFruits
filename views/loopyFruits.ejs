@@ -16,58 +16,175 @@
 <body id="loopyFruitsBody">
     <div id="section-d" class="grid">
 
+        <div id="playerControls">
+            <select name="beatCount" class="btn" id="beatCount">
+                <option value="16" id="16beat">16</option>
+                <option value="32" id="32beat" selected>32</option>
+                <option value="64" id="64beat">64</option>
+            </select>
+            <button href="" class="btn" id="playButton">
+                <img src="/imgs/baseline-play_arrow-24px.svg" alt="">
+            </button>
+            <button href="" class="btn" id="stopButton">
+                <img src="/imgs/baseline-stop-24px.svg" alt="">
+            </button>
+            <button href="" class="btn" id="clearButton">Clear</button>
+        </div>
+
         <div class="player grid">
-            <div id="playerControls">
-                <select name="beatCount" class="btn" id="beatCount">
-                    <option value="16" id="16beat" selected>16</option>
-                    <option value="32" id="32beat">32</option>
-                    <option value="64" id="64beat">64</option>
-                </select>
-                <button href="" class="btn" id="playButton">
-                    <img src="/imgs/baseline-play_arrow-24px.svg" alt="">
-                </button>
-                <button href="" class="btn" id="stopButton">
-                    <img src="/imgs/baseline-stop-24px.svg" alt="">
-                </button>
-                <button href="" class="btn" id="clearButton">Clear</button>
+            <div id="drums">
+                <h3>Drums</h3>
+                <div class="instruments" id="drums1">
+                    <div class="soundType">Snare</div>
+                </div>
+                <div class="instruments" id="drums2">
+                    <div class="soundType">Clap</div>
+
+                </div>
+                <div class="instruments" id="drums3">
+                    <div class="soundType">Kick</div>
+
+                </div>
+                <div class="instruments" id="drums4">
+                    <div class="soundType">Cymbol</div>
+                </div>
+                <div class="instruments" id="drums5">
+                    <div class="soundType">Hi-hat Open</div>
+
+                </div>
+                <div class="instruments" id="drums6">
+                    <div class="soundType">Hi-Hat Closed</div>
+
+                </div>
+                <div class="instruments" id="drums7">
+                    <div class="soundType">Shaker</div>
+
+                </div>
             </div>
-            <div class="instruments" id="instrument1">
-                <select name="loopyFruits1" id="loopyFruits1">
-                    <option value="hihat" selected>Hi-Hat</option>
-                    <option value="clap">Clap</option>
-                    <option value="kick">Kick</option>
-                    <option value="cymbol">Cymbol</option>
-                </select>
+            <div id="synths">
+                <h3>Synth</h3>
+                <div class="instruments" id="synths1">
+                    <div class="soundType">C</div>
+                </div>
+                <div class="instruments" id="synths2">
+                    <div class="soundType">C#</div>
+                </div>
+                <div class="instruments" id="synths3">
+                    <div class="soundType">D</div>
+                </div>
+                <div class="instruments" id="synths4">
+                    <div class="soundType">Eb</div>
+                </div>
+                <div class="instruments" id="synths5">
+                    <div class="soundType">E</div>
+                </div>
+                <div class="instruments" id="synths6">
+                    <div class="soundType">F</div>
+                </div>
+                <div class="instruments" id="synths7">
+                    <div class="soundType">F#</div>
+                </div>
+                <div class="instruments" id="synths8">
+                    <div class="soundType">G</div>
+                </div>
+                <div class="instruments" id="synths9">
+                    <div class="soundType">Ab</div>
+                </div>
+                <div class="instruments" id="synths10">
+                    <div class="soundType">A</div>
+                </div>
+                <div class="instruments" id="synths11">
+                    <div class="soundType">Bb</div>
+                </div>
+                <div class="instruments" id="synths12">
+                    <div class="soundType">B</div>
+                </div>
             </div>
-            <div class="instruments" id="instrument2">
-                <select name="loopyFruits2" id="loopyFruits2">
-                    <option value="hihat">Hi-Hat</option>
-                    <option value="clap" selected>Clap</option>
-                    <option value="kick">Kick</option>
-                    <option value="cymbol">Cymbol</option>
-                </select>
-            </div>
-            <div class="instruments" id="instrument3">
-                <select name="loopyFruits3" id="loopyFruits3">
-                    <option value="hihat">Hi-Hat</option>
-                    <option value="clap">Clap</option>
-                    <option value="kick" selected>Kick</option>
-                    <option value="cymbol">Cymbol</option>
-                </select>
-            </div>
-            <div class="instruments" id="instrument4">
-                <select name="loopyFruits4" id="loopyFruits4">
-                    <option value="hihat">Hi-Hat</option>
-                    <option value="clap">Clap</option>
-                    <option value="kick">Kick</option>
-                    <option value="cymbol" selected>Cymbol</option>
-                </select>
+            <!-- <div id="polySynths">
+                <h3>Chords</h3>
+                <div class="instruments" id="polySynths1">
+                    <div class="soundType">C</div>
+                </div>
+                <div class="instruments" id="polySynths2">
+                    <div class="soundType">C#</div>
+                </div>
+                <div class="instruments" id="polySynths3">
+                    <div class="soundType">D</div>
+                </div>
+                <div class="instruments" id="polySynths4">
+                    <div class="soundType">Eb</div>
+                </div>
+                <div class="instruments" id="polySynths5">
+                    <div class="soundType">E</div>
+                </div>
+                <div class="instruments" id="polySynths6">
+                    <div class="soundType">F</div>
+                </div>
+                <div class="instruments" id="polySynths7">
+                    <div class="soundType">F#</div>
+                </div>
+                <div class="instruments" id="polySynths8">
+                    <div class="soundType">G</div>
+                </div>
+                <div class="instruments" id="polySynths9">
+                    <div class="soundType">Ab</div>
+                </div>
+                <div class="instruments" id="polySynths10">
+                    <div class="soundType">A</div>
+                </div>
+                <div class="instruments" id="polySynths11">
+                    <div class="soundType">Bb</div>
+                </div>
+                <div class="instruments" id="polySynths12">
+                    <div class="soundType">B</div>
+                </div> -->
+            <!-- </div> -->
+            <div id="bassSynths">
+                <h3>Bass</h3>
+                <div class="instruments" id="bassSynths1">
+                    <div class="soundType">C</div>
+                </div>
+                <div class="instruments" id="bassSynths2">
+                    <div class="soundType">C#</div>
+                </div>
+                <div class="instruments" id="bassSynths3">
+                    <div class="soundType">D</div>
+                </div>
+                <div class="instruments" id="bassSynths4">
+                    <div class="soundType">Eb</div>
+                </div>
+                <div class="instruments" id="bassSynths5">
+                    <div class="soundType">E</div>
+                </div>
+                <div class="instruments" id="bassSynths6">
+                    <div class="soundType">F</div>
+                </div>
+                <div class="instruments" id="bassSynths7">
+                    <div class="soundType">F#</div>
+                </div>
+                <div class="instruments" id="bassSynths8">
+                    <div class="soundType">G</div>
+                </div>
+                <div class="instruments" id="bassSynths9">
+                    <div class="soundType">Ab</div>
+                </div>
+                <div class="instruments" id="bassSynths10">
+                    <div class="soundType">A</div>
+                </div>
+                <div class="instruments" id="bassSynths11">
+                    <div class="soundType">Bb</div>
+                </div>
+                <div class="instruments" id="bassSynths12">
+                    <div class="soundType">B</div>
+                </div>
             </div>
         </div>
     </div>
 </body>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
-<script type="text/javascript" src="/scripts/script.js"></script>
-<script type="text/javascript" src="/scripts/loopyfruits.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script> -->
+<!-- <script type="text/javascript" src="/scripts/script.js"></script> -->
+<!-- <script type="text/javascript" src="/scripts/loopyfruits.js"></script> -->
+<script type="text/javascript" src="/scripts/producer.js"></script>
 
 </html>
