@@ -154,6 +154,7 @@ p {
 
 #section-d {
     overflow: hidden;
+    text-align: center;
 }
 
 .player {
@@ -172,11 +173,12 @@ p {
 
 #playerControls {
     height: 65px;
+    width: 100vw;
     /* text-align: left; */
     margin: auto;
     position: fixed;
     z-index: 10;
-
+    justify-items: center;
 }
 
 #playerControls .btn {
