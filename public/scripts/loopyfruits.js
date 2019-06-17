@@ -65,6 +65,8 @@ $('#loopyFruits').on('change', function () {
     }
 });
 
+var test = 0;
+
 var beatCountChange = function (i) {
     let oldBeatCount = $(`#instrument${i} .clickBeat`).length;
     beatCountValue = beatCount.value;
