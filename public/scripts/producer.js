@@ -2,6 +2,15 @@ document.documentElement.addEventListener('mousedown', () => {
     if (Tone.context.state !== 'running') Tone.context.resume();
 });
 
+
+var tempo = $('#tempoSlider');
+Tone.Transport.bpm.value = tempo.val();
+
+$('#tempoSlider').on('change', function () {
+    Tone.Transport.bpm.value = tempo.val();
+    noteTime = 1800 / tempo.val();
+})
+
 const drums = [
     new Tone.Player('/audio/test/snare.wav'),
     new Tone.Player('/audio/test/clap.wav'),
@@ -79,7 +88,7 @@ const allNotes = [
 ]
 
 
-var gain = new Tone.Gain(0.15);
+var gain = new Tone.Gain(0.4);
 gain.toMaster();
 drums.forEach(drum => drum.toMaster());
 bassSynths.forEach(bass => bass.toMaster());
@@ -111,26 +120,7 @@ function repeat(time) {
 
 }
 
-// function drumRepeater() {
-//     let step = index % beatCountValue;
-//     for (var i = 0; i < drums.length; i++) {
-//         let drum = drums[i],
-//             beat = $(`#drums${i+1} .beat${step + 1}`);
-//         if (beat.hasClass('on')) {
-//             drum.start();
-//             beat.toggleClass('onPlaying');
-//             setTimeout(() => {
-//                 beat.removeClass('onPlaying');
-//             }, 250);
-//         } else {
-//             beat.toggleClass('offPlaying');
-//             setTimeout(() => {
-//                 beat.removeClass('offPlaying');
-//             }, 250);
-//         }
-//     }
-//     index++;
-// }
+let noteTime = 1800 / tempo.val();
 
 function repeater(notes, notesString) {
     let step = index % beatCountValue;
@@ -160,6 +150,7 @@ var beatCount = document.getElementById('beatCount');
 var beatCountValue = beatCount.value;
 
 function drawQuarterNotes(soundType, count) {
+    let currentBeatCount = $('#drums1 .clickBeat').length;
     for (let y = 1; y <= count; y++) {
         for (let x = 1; x <= beatCountValue; x++) {
             $(soundType + y).append(`<div class="clickBeat beat${x}"></div>`);
@@ -189,7 +180,7 @@ const removeListener = function (element) {
 addListener('.clickBeat');
 
 var beatCountChange = function (i) {
-    let oldBeatCount = $(`#drums${i} .clickBeat`).length;
+    let oldBeatCount = $(`#drums1 .clickBeat`).length;
     beatCountValue = beatCount.value;
     if (oldBeatCount < beatCountValue) {
         for (let x = oldBeatCount + 1; x <= beatCountValue; x++) {
@@ -206,17 +197,40 @@ var beatCountChange = function (i) {
     }
 }
 
-$('#beatCount').on('change', function () {
-    for (let x = 1; x <= 7; x++) {
-        beatCountChange(x);
+var beatCountChange = function (soundType) {
+    let oldBeatCount = $(`#${soundType}1 .clickBeat`).length;
+    beatCountValue = beatCount.value;
+    for (let d = 1; d <= oldBeatCount; d++) {
+        if (oldBeatCount < beatCountValue) {
+            for (let x = oldBeatCount + 1; x <= beatCountValue; x++) {
+                if (x == 1 || (x - 1) % 4 == 0) {
+                    $(`#${soundType}${d}`).append(`<div class="clickBeat beat${x} emphasize"></div>`)
+                } else {
+                    $(`#${soundType}${d}`).append(`<div class="clickBeat beat${x}"></div>`)
+                }
+            }
+        } else if (oldBeatCount > beatCountValue) {
+            for (let x = oldBeatCount; x > beatCountValue; x--) {
+                $('.beat' + x).remove();
+            }
+        }
     }
+
+}
+
+$('#beatCount').on('change', function () {
+    beatCountChange('drums');
+    beatCountChange('synths');
+    beatCountChange('polySynths');
+    beatCountChange('bassSynths');
     removeListener('.clickBeat');
     addListener('.clickBeat');
     $('.player').attr("overflow-x", "hidden");
     setTimeout(() => {
         $('.player').css("overflow-x", "scroll");
     }, 1)
-})
+});
+
 
 $('#stopButton').click(function () {
     Tone.Transport.stop();

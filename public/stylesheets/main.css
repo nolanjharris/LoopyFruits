@@ -53,13 +53,13 @@ p {
 
 #showcase .bg-image {
     position: absolute;
-    background: #110844 url("assets/imgs/drums.jpg");
+    background: #110844 url("/imgs/drums.jpg");
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     height: 450px;
     z-index: -1;
-    opacity: 0.4;
+    opacity: 0.8;
 }
 
 #showcase h1 {
@@ -84,7 +84,7 @@ p {
 
 #section-b {
     padding: 2em 1em 1em;
-    background: linear-gradient(#2690d4, #6b73ff);
+    background: linear-gradient(#dff0fa, #53b8f7);
 }
 
 #section-b ul {
@@ -154,14 +154,14 @@ p {
 
 #section-d {
     overflow: hidden;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .player {
     height: fit-content;
     width: 100vw;
     /* border: 1px solid #818283; */
-    margin-top: 75px;
+    margin-top: 100px;
     margin-bottom: 0;
     min-width: 100vw;
     white-space: nowrap;
@@ -172,13 +172,15 @@ p {
 }
 
 #playerControls {
-    height: 65px;
+    height: 100px;
     width: 100vw;
     /* text-align: left; */
     margin: auto;
     position: fixed;
     z-index: 10;
-    justify-items: center;
+    /* justify-items: center; */
+    background: #eeeef1;
+    border-bottom: 1px solid #333;
 }
 
 #playerControls .btn {
@@ -190,8 +192,44 @@ p {
     text-align: center;
 }
 
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background: #01558a;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    display: inline-block;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #3eb0f1;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #3eb0f1;
+}
+
+#tempoSlider {
+    float: left;
+    margin-top: 15px;
+}
+
 #playerControls .btn:hover {
-    background: #2690d4;
+    background: #95cff3;
 }
 
 #playerControls img {
@@ -237,6 +275,7 @@ p {
     border-radius: 0;
     border: none;
     border: 1px solid #7fa7be;
+    display: block;
 }
 
 .player>div {
@@ -299,13 +338,12 @@ p {
     background: #8bcff7;
 }
 
-/* media queries
-
+/* media queries  */
 @media (min-width: 700px) {
-    .grid {
+    /* .grid {
         display: grid;
         grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
-    }
+    } */
 
     #section-a .content-text {
         columns: 2;
@@ -334,4 +372,4 @@ p {
     #section-b li {
         width: 31%;
     }
-} */
+}
