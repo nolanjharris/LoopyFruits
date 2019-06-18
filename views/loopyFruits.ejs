@@ -29,12 +29,21 @@
                 <img src="/imgs/baseline-stop-24px.svg" alt="">
             </button>
             <button href="" class="btn" id="clearButton">Clear</button>
-            <input type="range" class="slider" id="tempoSlider" min="60" max="200" step="1" value="120">
+            <div id="tempoDiv">
+                <h4>BPM: 120</h4>
+                <input type="range" class="slider" id="tempoSlider" min="60" max="240" step="1" value="120">
+            </div>
         </div>
 
         <div class="player grid">
             <div id="drums">
-                <h3>Drums</h3>
+                <div class="instrumentControls">
+                    <h3>Drums</h3>
+                    <div class="instrumentVolumeBox">
+                        <h4>Vol</h4>
+                        <input type="range" class="slider" id="drumsVolumeSlider" min="-15" max="20" step="1" value="0">
+                    </div>
+                </div>
                 <div class="instruments" id="drums1">
                     <div class="soundType">Snare</div>
                 </div>
@@ -63,7 +72,13 @@
                 </div>
             </div>
             <div id="synths">
-                <h3>Synth</h3>
+                <div class="instrumentControls">
+                    <h3>Synth</h3>
+                    <div class="instrumentVolumeBox">
+                        <h4>Vol</h4>
+                        <input type="range" class="slider" id="synthVolumeSlider" min="-20" max="20" step="1" value="0">
+                    </div>
+                </div>
                 <div class="instruments" id="synths1">
                     <div class="soundType">C</div>
                 </div>
@@ -101,47 +116,14 @@
                     <div class="soundType">B</div>
                 </div>
             </div>
-            <!-- <div id="polySynths">
-                <h3>Chords</h3>
-                <div class="instruments" id="polySynths1">
-                    <div class="soundType">C</div>
-                </div>
-                <div class="instruments" id="polySynths2">
-                    <div class="soundType">C#</div>
-                </div>
-                <div class="instruments" id="polySynths3">
-                    <div class="soundType">D</div>
-                </div>
-                <div class="instruments" id="polySynths4">
-                    <div class="soundType">Eb</div>
-                </div>
-                <div class="instruments" id="polySynths5">
-                    <div class="soundType">E</div>
-                </div>
-                <div class="instruments" id="polySynths6">
-                    <div class="soundType">F</div>
-                </div>
-                <div class="instruments" id="polySynths7">
-                    <div class="soundType">F#</div>
-                </div>
-                <div class="instruments" id="polySynths8">
-                    <div class="soundType">G</div>
-                </div>
-                <div class="instruments" id="polySynths9">
-                    <div class="soundType">Ab</div>
-                </div>
-                <div class="instruments" id="polySynths10">
-                    <div class="soundType">A</div>
-                </div>
-                <div class="instruments" id="polySynths11">
-                    <div class="soundType">Bb</div>
-                </div>
-                <div class="instruments" id="polySynths12">
-                    <div class="soundType">B</div>
-                </div>
-            </div> -->
             <div id="bassSynths">
-                <h3>Bass</h3>
+                <div class="instrumentControls">
+                    <h3>Bass</h3>
+                    <div class="instrumentVolumeBox">
+                        <h4>Vol</h4>
+                        <input type="range" class="slider" id="bassVolumeSlider" min="-20" max="20" step="1" value="0">
+                    </div>
+                </div>
                 <div class="instruments" id="bassSynths1">
                     <div class="soundType">C</div>
                 </div>

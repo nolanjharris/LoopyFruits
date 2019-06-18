@@ -161,7 +161,7 @@ p {
     height: fit-content;
     width: 100vw;
     /* border: 1px solid #818283; */
-    margin-top: 100px;
+    margin-top: 110px;
     margin-bottom: 0;
     min-width: 100vw;
     white-space: nowrap;
@@ -172,9 +172,9 @@ p {
 }
 
 #playerControls {
-    height: 100px;
+    /* display: flex; */
+    height: 110px;
     width: 100vw;
-    /* text-align: left; */
     margin: auto;
     position: fixed;
     z-index: 10;
@@ -192,10 +192,23 @@ p {
     text-align: center;
 }
 
+#tempoDiv {
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+#tempoDiv>h4 {
+    margin: 0 15px;
+    color: #01558a;
+}
+
 .slider {
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
+    width: 90%;
     height: 5px;
     background: #01558a;
     outline: none;
@@ -225,7 +238,13 @@ p {
 
 #tempoSlider {
     float: left;
-    margin-top: 15px;
+    /* margin-top: 15px; */
+}
+
+.instrumentControls .slider {
+    width: 200px;
+    float: left;
+    padding: 17.5 0;
 }
 
 #playerControls .btn:hover {
@@ -246,7 +265,7 @@ p {
 
 /* Track */
 .player::-webkit-scrollbar-track {
-    background: #3aaef7;
+    background: #6bc7fc;
 }
 
 /* Handle */
@@ -282,11 +301,35 @@ p {
     margin-bottom: 30px;
 }
 
-.player>div>h3 {
-    padding: 5px 15px;
+.player>div>.instrumentControls>h3 {
+    padding-left: 15px;
+    width: 87px;
     margin: 0;
     text-align: left;
     color: #01558a;
+    display: inline;
+    float: left;
+}
+
+.instrumentControls {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 10px; */
+}
+
+.instrumentVolumeBox {
+    display: flex;
+    align-items: center;
+    width: 240px;
+    height: 40px;
+    border: 1px solid #01558a;
+    padding-left: 10px;
+}
+
+.instrumentVolumeBox>h4 {
+    display: inline;
+    color: #1679b6;
+    margin-right: 5px;
 }
 
 .instruments {

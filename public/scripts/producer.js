@@ -6,10 +6,11 @@ document.documentElement.addEventListener('mousedown', () => {
 var tempo = $('#tempoSlider');
 Tone.Transport.bpm.value = tempo.val();
 
-$('#tempoSlider').on('change', function () {
+$('#tempoSlider').on('input', function () {
     Tone.Transport.bpm.value = tempo.val();
     noteTime = 1800 / tempo.val();
-})
+    $('#tempoDiv h4').html('BPM: ' + tempo.val());
+});
 
 const drums = [
     new Tone.Player('/audio/test/snare.wav'),
@@ -25,22 +26,6 @@ var distortion = new Tone.Distortion(0.1)
 var tremolo = new Tone.Tremolo().start()
 
 tremolo.wet.value = 0.4;
-
-
-// const polySynths = [
-//     new Tone.PolySynth(4, Tone.Synth).chain(distortion, tremolo, Tone.Master),
-//     new Tone.PolySynth(4, Tone.Synth).chain(distortion, tremolo, Tone.Master),
-//     new Tone.PolySynth(4, Tone.Synth).chain(distortion, tremolo, Tone.Master),
-//     new Tone.PolySynth(4, Tone.Synth).chain(distortion, tremolo, Tone.Master),
-//     new Tone.PolySynth(4, Tone.Synth).chain(distortion, tremolo, Tone.Master),
-//     new Tone.PolySynth(4, Tone.Synth).chain(distortion, tremolo, Tone.Master),
-//     new Tone.PolySynth(4, Tone.Synth).chain(distortion, tremolo, Tone.Master),
-//     new Tone.PolySynth(4, Tone.Synth).chain(distortion, tremolo, Tone.Master),
-//     new Tone.PolySynth(4, Tone.Synth).chain(distortion, tremolo, Tone.Master),
-//     new Tone.PolySynth(4, Tone.Synth).chain(distortion, tremolo, Tone.Master),
-//     new Tone.PolySynth(4, Tone.Synth).chain(distortion, tremolo, Tone.Master),
-//     new Tone.PolySynth(4, Tone.Synth).chain(distortion, tremolo, Tone.Master)
-// ]
 
 const synths = [
     new Tone.MonoSynth(),
@@ -87,6 +72,15 @@ const allNotes = [
     'B3'
 ]
 
+function instrumentVolume(sliderName, synthName) {
+    $(sliderName).on('change', function () {
+        synthName.forEach(synth => synth.volume.value = $(sliderName).val());
+    });
+}
+
+instrumentVolume('#drumsVolumeSlider', drums);
+instrumentVolume('#synthVolumeSlider', synths);
+instrumentVolume('#bassVolumeSlider', bassSynths);
 
 var gain = new Tone.Gain(0.4);
 gain.toMaster();
@@ -124,6 +118,8 @@ let noteTime = 1800 / tempo.val();
 
 function repeater(notes, notesString) {
     let step = index % beatCountValue;
+    let bpm = tempo.val();
+    let bpmCount = 30000 / bpm;
     for (var i = 0; i < notes.length; i++) {
         let note = notes[i],
             beat = $(`#${notesString}${i+1} .beat${step + 1}`);
@@ -136,12 +132,12 @@ function repeater(notes, notesString) {
             beat.toggleClass('onPlaying');
             setTimeout(() => {
                 beat.removeClass('onPlaying');
-            }, 250);
+            }, bpmCount);
         } else {
             beat.toggleClass('offPlaying');
             setTimeout(() => {
                 beat.removeClass('offPlaying');
-            }, 250);
+            }, bpmCount);
         }
     }
 }
