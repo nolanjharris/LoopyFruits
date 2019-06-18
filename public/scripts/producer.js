@@ -9,7 +9,7 @@ Tone.Transport.bpm.value = tempo.val();
 $('#tempoSlider').on('input', function () {
     Tone.Transport.bpm.value = tempo.val();
     noteTime = 1800 / tempo.val();
-    $('#tempoDiv h4').html('BPM: ' + tempo.val());
+    $('#tempoDiv h4').html('BPM:' + tempo.val());
 });
 
 const drums = [
@@ -42,38 +42,46 @@ const synths = [
     new Tone.MonoSynth()
 ]
 
+var bassSynth = new Tone.PluckSynth({
+    attackNoise: 2,
+    dampening: 500,
+    resonance: 0.8
+}).toMaster()
+
 const bassSynths = [
-    new Tone.PluckSynth(),
-    new Tone.PluckSynth(),
-    new Tone.PluckSynth(),
-    new Tone.PluckSynth(),
-    new Tone.PluckSynth(),
-    new Tone.PluckSynth(),
-    new Tone.PluckSynth(),
-    new Tone.PluckSynth(),
-    new Tone.PluckSynth(),
-    new Tone.PluckSynth(),
-    new Tone.PluckSynth(),
-    new Tone.PluckSynth()
+    bassSynth,
+    bassSynth,
+    bassSynth,
+    bassSynth,
+    bassSynth,
+    bassSynth,
+    bassSynth,
+    bassSynth,
+    bassSynth,
+    bassSynth,
+    bassSynth,
+    bassSynth
 ]
 
 const allNotes = [
-    'C3',
-    'C#3',
-    'D3',
-    'Eb3',
-    'E3',
-    'F3',
-    'F#3',
-    'G3',
-    'Ab3',
-    'A3',
-    'Bb3',
-    'B3'
+    'C',
+    'C#',
+    'D',
+    'Eb',
+    'E',
+    'F',
+    'F#',
+    'G',
+    'Ab',
+    'A',
+    'Bb',
+    'B'
 ]
 
+let octave = 3;
+
 function instrumentVolume(sliderName, synthName) {
-    $(sliderName).on('change', function () {
+    $(sliderName).on('input', function () {
         synthName.forEach(synth => synth.volume.value = $(sliderName).val());
     });
 }
@@ -108,7 +116,6 @@ playListener();
 function repeat(time) {
     repeater(drums, "drums");
     repeater(synths, "synths");
-    // repeater(polySynths, "polySynths");
     repeater(bassSynths, "bassSynths");
     index++;
 
@@ -126,8 +133,10 @@ function repeater(notes, notesString) {
         if (beat.hasClass('on')) {
             if (notes === drums) {
                 note.start();
+            } else if (notes === bassSynths) {
+                note.triggerAttackRelease(allNotes[i] + "1", "8n");
             } else {
-                note.triggerAttackRelease(allNotes[i], "8n");
+                note.triggerAttackRelease(allNotes[i] + octave, "8n");
             }
             beat.toggleClass('onPlaying');
             setTimeout(() => {
