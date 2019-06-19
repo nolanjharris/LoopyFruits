@@ -42,10 +42,16 @@ const synths = [
     new Tone.MonoSynth()
 ]
 
-var bassSynth = new Tone.PluckSynth({
-    attackNoise: 2,
-    dampening: 500,
-    resonance: 0.8
+var bassSynth = new Tone.Synth({
+    oscillator: {
+        type: 'triangle4'
+    },
+    envelope: {
+        attack: 0.001,
+        decay: 0,
+        sustain: 1,
+        release: 0.5
+    }
 }).toMaster()
 
 const bassSynths = [
@@ -121,6 +127,10 @@ function repeat(time) {
 
 }
 
+$('.instrumentOctave select').on('change', function () {
+    octave = $('.instrumentOctave select').val();
+})
+
 let noteTime = 1800 / tempo.val();
 
 function repeater(notes, notesString) {
@@ -134,7 +144,7 @@ function repeater(notes, notesString) {
             if (notes === drums) {
                 note.start();
             } else if (notes === bassSynths) {
-                note.triggerAttackRelease(allNotes[i] + "1", "8n");
+                note.triggerAttackRelease(allNotes[i] + "2", "8n");
             } else {
                 note.triggerAttackRelease(allNotes[i] + octave, "8n");
             }

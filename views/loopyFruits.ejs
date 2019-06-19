@@ -74,6 +74,18 @@
             <div id="synths">
                 <div class="instrumentControls">
                     <h3>Synth</h3>
+                    <div class="instrumentOctave">
+                        <h4>Octave</h4>
+                        <select name="synthOctave" class="btn" id="synthOctave">
+                            <option value="1">Low</option>
+                            <option value="2">2</option>
+                            <option value="3" selected>3</option>
+                            <option value="4">Middle</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">High</option>
+                        </select>
+                    </div>
                     <div class="instrumentVolumeBox">
                         <h4>Vol</h4>
                         <input type="range" class="slider" id="synthVolumeSlider" min="-20" max="20" step="1" value="0">

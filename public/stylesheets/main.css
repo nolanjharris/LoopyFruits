@@ -247,6 +247,12 @@ p {
     padding: 17.5 0;
 }
 
+.instrumentControls select {
+    width: 200px;
+    float: left;
+    padding: 17.5 0;
+}
+
 #playerControls .btn:hover {
     background: #95cff3;
 }
@@ -330,6 +336,33 @@ p {
     display: inline;
     color: #1679b6;
     margin-right: 5px;
+}
+
+.instrumentOctave {
+    display: flex;
+    align-items: center;
+    width: 160px;
+    height: 40px;
+    border: 1px solid #01558a;
+    padding-left: 5px;
+    margin-right: 40px;
+}
+
+.instrumentOctave>h4 {
+    display: inline;
+    color: #1679b6;
+    margin-right: 5px;
+}
+
+.instrumentOctave>.btn {
+    padding: .5em .8em;
+    width: 90px;
+    background: #6bc7fc;
+    font-size: .9em;
+}
+
+.instrumentOctave>.btn:hover {
+    background: #1679b6;
 }
 
 .instruments {
