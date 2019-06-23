@@ -3,7 +3,7 @@ document.documentElement.addEventListener('mousedown', () => {
 });
 
 
-var tempo = $('#tempoSlider');
+let tempo = $('#tempoSlider');
 Tone.Transport.bpm.value = tempo.val();
 
 $('#tempoSlider').on('input', function () {
@@ -92,6 +92,23 @@ function instrumentVolume(sliderName, synthName) {
     });
 }
 
+const instruments = SampleLibrary.load({
+    instruments: ["guitar-nylon", "guitar-acoustic", "piano", "cello", "contrabass", "saxophone", "harmonium"]
+});
+
+// instruments["piano"].toMaster();
+
+// instruments.forEach(instrument => instrument.toMaster());
+
+for (var key in instruments) {
+    instruments[key].toMaster();
+}
+
+$('.testThisShit').on('click', function () {
+    instruments["guitar-acoustic"].triggerAttackRelease('B2');
+    console.log('testing');
+});
+
 instrumentVolume('#drumsVolumeSlider', drums);
 instrumentVolume('#synthVolumeSlider', synths);
 instrumentVolume('#bassVolumeSlider', bassSynths);
@@ -122,10 +139,16 @@ playListener();
 function repeat(time) {
     repeater(drums, "drums");
     repeater(synths, "synths");
-    repeater(bassSynths, "bassSynths");
+    // repeater(bassSynths, "bassSynths");
     index++;
 
 }
+
+let instrumentSelect = $('#instrumentOptionSelect').val();
+
+$('#instrumentOptionSelect').on('change', function () {
+    instrumentSelect = $('#instrumentOptionSelect').val();
+})
 
 $('.instrumentOctave select').on('change', function () {
     octave = $('.instrumentOctave select').val();

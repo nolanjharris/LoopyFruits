@@ -1,8 +1,10 @@
 /* Core Styles */
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu&display=swap');
+
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Ubuntu', 'Open Sans', sans-serif;
     background: #eeeef0;
     color: #fff;
     font-size: 1.1em;
@@ -30,7 +32,7 @@ p {
 
 .btn {
     display: inline-block;
-    background: #2690d4;
+    background: #6bc7fc;
     color: #fff;
     text-decoration: none;
     /* border-radius: 1.2em; */
@@ -41,7 +43,7 @@ p {
 }
 
 .btn:hover {
-    background: #848af1;
+    background: #2690d4;
 }
 
 /* Header Showcase */
@@ -309,7 +311,7 @@ p {
 
 .player>div>.instrumentControls>h3 {
     padding-left: 15px;
-    width: 87px;
+    width: 129px;
     margin: 0;
     text-align: left;
     color: #01558a;
@@ -323,10 +325,28 @@ p {
     /* margin-bottom: 10px; */
 }
 
+.instrumentOptions {
+    display: flex;
+    align-items: center;
+    width: 168px;
+    height: 40px;
+    margin-right: 41px;
+    border: 1px solid #01558a;
+}
+
+#instrumentOptionSelect {
+    padding: 0;
+    padding-left: 10px;
+    height: 100%;
+    width: 168px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
 .instrumentVolumeBox {
     display: flex;
     align-items: center;
-    width: 240px;
+    width: 242px;
     height: 40px;
     border: 1px solid #01558a;
     padding-left: 10px;
@@ -341,10 +361,10 @@ p {
 .instrumentOctave {
     display: flex;
     align-items: center;
-    width: 160px;
+    width: 116px;
     height: 40px;
     border: 1px solid #01558a;
-    padding-left: 5px;
+    padding-left: 7px;
     margin-right: 40px;
 }
 
@@ -356,7 +376,8 @@ p {
 
 .instrumentOctave>.btn {
     padding: .5em .8em;
-    width: 90px;
+    height: 100%;
+    width: 55px;
     background: #6bc7fc;
     font-size: .9em;
 }

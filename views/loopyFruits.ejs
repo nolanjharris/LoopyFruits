@@ -73,7 +73,18 @@
             </div>
             <div id="synths">
                 <div class="instrumentControls">
-                    <h3>Synth</h3>
+                    <h3>Instrument</h3>
+                    <div class="instrumentOptions">
+                        <select name="instrumentOptionSelect" class="btn" id="instrumentOptionSelect">
+                            <option value="1">Guitar-Electric</option>
+                            <option value="2" selected>Guitar-Accoustic</option>
+                            <option value="3">Piano</option>
+                            <option value="4">Violin</option>
+                            <option value="5">Organ</option>
+                            <option value="6">Saxophone</option>
+                            <option value="7">Xylophone</option>
+                        </select>
+                    </div>
                     <div class="instrumentOctave">
                         <h4>Octave</h4>
                         <select name="synthOctave" class="btn" id="synthOctave">
@@ -128,7 +139,7 @@
                     <div class="soundType">B</div>
                 </div>
             </div>
-            <div id="bassSynths">
+            <!-- <div id="bassSynths">
                 <div class="instrumentControls">
                     <h3>Bass</h3>
                     <div class="instrumentVolumeBox">
@@ -172,7 +183,8 @@
                 <div class="instruments" id="bassSynths12">
                     <div class="soundType">B</div>
                 </div>
-            </div>
+            </div> -->
+            <button class="testThisShit btn">TEST</button>
         </div>
     </div>
 </body>
@@ -180,6 +192,8 @@
 <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script> -->
 <!-- <script type="text/javascript" src="/scripts/script.js"></script> -->
 <!-- <script type="text/javascript" src="/scripts/loopyfruits.js"></script> -->
+
+<script type="text/javascript" src="/scripts/external-js/Tonejs-Instruments.js"></script>
 <script type="text/javascript" src="/scripts/producer.js"></script>
 
 </html>
